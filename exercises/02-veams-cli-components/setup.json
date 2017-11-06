@@ -1,0 +1,32 @@
+{
+  "generator-veams": {
+    "projectName": "Veams-Components",
+    "projectType": "static-page-app",
+    "taskRunner": "grunt",
+    "templateEngine": "ssr-mangony-hbs",
+    "gruntModules": [
+      "grunt-dr-svg-sprites",
+      "grunt-autoprefixer",
+      "grunt-browserify",
+      "grunt-contrib-uglify",
+      "grunt-contrib-handlebars"
+    ],
+    "features": [],
+    "jsLibs": [
+      "jquery",
+      "handlebars"
+    ],
+    "cssLibs": [
+      "bourbon-neat",
+      "include-media"
+    ],
+    "testAndQA": false,
+    "testAndQALibs": [],
+    "veamsPackages": true,
+    "docs": [],
+    "icons": "sprites",
+    "cssPostProcessors": [
+      "autoprefixer"
+    ]
+  }
+}

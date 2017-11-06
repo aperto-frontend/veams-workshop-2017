@@ -1,0 +1,33 @@
+{
+    "projectType": "static-page-app",
+    "blueprints": {
+        "filePrefix": false
+    },
+    "config": {
+        "src": "configs/_grunt/*.js"
+    },
+    "importFiles": {
+        "style": "src/app.scss",
+        "script": "src/app.js"
+    },
+    "insertpoints": [
+        "src/app.js",
+        "src/shared/layouts",
+        "src/core/pages",
+        "src/features/containers",
+        "src/app.events.js"
+    ],
+    "paths": {
+        "config": "configs",
+        "server": "server",
+        "src": "src",
+        "app": "app",
+        "component": "src/shared/components",
+        "utility": "src/shared/utilities"
+    },
+    "ports": {
+        "app": 3000,
+        "server": 2999
+    },
+    "startPath": "index.html"
+}
