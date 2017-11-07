@@ -1,6 +1,6 @@
 {
   "generator-veams": {
-    "projectName": "Veams-Components",
+    "projectName": "02 veams cli components",
     "projectType": "static-page-app",
     "taskRunner": "grunt",
     "templateEngine": "ssr-mangony-hbs",

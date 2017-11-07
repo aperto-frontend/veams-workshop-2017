@@ -1,0 +1,9 @@
+{
+	"type": "component",
+	"displayName": "c-video",
+	"contextData": "video-bp",
+	"layout": "lyt-docs",
+	"scssFiles": [
+		"_c-video.scss"
+	]
+}

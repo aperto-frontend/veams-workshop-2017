@@ -1,6 +1,6 @@
 module.exports = {
 	ajax: {
-		files: 'server/ajax/**/*.{json,html}',
+		files: 'server/mocks/**/*.{json,html}',
 		tasks: 'sync:ajax'
 	},
 	assets: {
@@ -9,9 +9,18 @@ module.exports = {
 			],
 		tasks: 'sync:assets'
 	},
+	scssDocs: {
+		files: [
+			'<%= paths.src %>/core/layouts/docs/**/*.scss'
+		],
+		tasks: [
+			'sass:docs'
+		]
+	},
 	scss: {
 		files: [
 			'<%= paths.src %>/app.tmp.scss',
+			'<%= paths.src %>/core/components/**/*.scss',
 			'<%= paths.src %>/core/styles/**/*.scss',
 			'<%= paths.src %>/shared/styles/**/*.scss',
 			'<%= paths.src %>/shared/components/**/styles/**/*.scss',

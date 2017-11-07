@@ -1,4 +1,4 @@
-# Veams-Components
+# 02 veams cli components
 
 Current version="0.0.1"
 
@@ -11,7 +11,7 @@ Current version="0.0.1"
 We use Libsass as standard SCSS compiler.
 
 ## Frontend Methodology
-We build Veams-Components with the Veams Methodology:
+We build 02 veams cli components with the Veams Methodology:
 * http://veams.org/methodology/
 
 ## Setup
