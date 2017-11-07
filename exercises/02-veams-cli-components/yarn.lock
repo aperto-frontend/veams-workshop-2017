@@ -6942,6 +6942,18 @@ vary@~1.1.0, vary@~1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/vary/-/vary-1.1.2.tgz#2299f02c6ded30d4a5961b0b9f74524a18f634fc"
 
+veams-component-figure@^5.0.2:
+  version "5.0.2"
+  resolved "https://registry.yarnpkg.com/veams-component-figure/-/veams-component-figure-5.0.2.tgz#d65c6920da3d0d3b3db83d5b13254fdbecfd1152"
+
+veams-component-picture@^5.0.1:
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/veams-component-picture/-/veams-component-picture-5.0.1.tgz#0d0bea32b1e483e38401f51c209503efd0f8d588"
+
+veams-component-video@^5.0.1:
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/veams-component-video/-/veams-component-video-5.0.1.tgz#c39a1e98ce503f57397f670e692184b42c8046d6"
+
 veams-plugin-dom@^1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/veams-plugin-dom/-/veams-plugin-dom-1.0.2.tgz#bb3d12393d7dcab4cf10cba5962a1b9adcc462e1"
