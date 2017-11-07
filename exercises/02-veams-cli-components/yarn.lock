@@ -4433,8 +4433,8 @@ mangony-hbs-helper-wrap-with@~0.0.3:
   resolved "https://registry.yarnpkg.com/mangony-hbs-helper-wrap-with/-/mangony-hbs-helper-wrap-with-0.0.7.tgz#2f92c4cee99dc49d4d19b661f604bc512863d57b"
 
 mangony-hbs-helpers@^0.3.0:
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/mangony-hbs-helpers/-/mangony-hbs-helpers-0.3.1.tgz#6df9af2ff3d1e7c0ed7338fe729c8c3954411529"
+  version "0.3.2"
+  resolved "https://registry.yarnpkg.com/mangony-hbs-helpers/-/mangony-hbs-helpers-0.3.2.tgz#0aeb88b192cb64bb0faa9f02126359760ad42aa7"
   dependencies:
     export-files "~2.1.1"
     get-value "^2.0.6"
@@ -4445,7 +4445,34 @@ mangony-hbs-helpers@^0.3.0:
     markdown-it-named-headers "0.0.4"
     moment "~2.14.1"
 
-mangony@^1.1.16, mangony@~1.1.9:
+mangony@^1.1.16:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/mangony/-/mangony-1.2.1.tgz#ed0d7bd7b4dc7d8e12e520923f790b8d169ee657"
+  dependencies:
+    bluebird "~3.3.4"
+    browser-sync "~2.14.0"
+    chalk "~1.1.3"
+    chokidar "~1.6.0"
+    connect-browser-sync "~2.0.1"
+    deep-extend "~0.4.1"
+    express "~4.14.0"
+    fs-extra "~0.26.7"
+    glob "~7.0.3"
+    gray-matter "~2.0.2"
+    handlebars "~4.0.5"
+    handlebars-helpers "~0.7.3"
+    handlebars-layouts "~3.1.3"
+    hjson "~2.0.3"
+    mangony-hbs-helper-wrap-with "~0.0.3"
+    mangony-hbs-helpers "^0.3.0"
+    markdown-it "~6.1.1"
+    markdown-it-attrs "0.6.1"
+    markdown-it-named-headers "0.0.4"
+    mkdirp "~0.5.1"
+    multi-glob "~1.0.1"
+    path "~0.12.7"
+
+mangony@~1.1.9:
   version "1.1.16"
   resolved "https://registry.yarnpkg.com/mangony/-/mangony-1.1.16.tgz#2c256d120ea677b7d3be4b5c6fe213e3357d9439"
   dependencies:
