@@ -12,8 +12,8 @@
     },
     "insertpoints": [
         "src/app.js",
-        "src/shared/layouts",
-        "src/core/pages",
+        "src/core/layouts",
+        "src/pages",
         "src/features/containers",
         "src/app.events.js"
     ],
