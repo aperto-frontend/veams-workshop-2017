@@ -1,16 +1,18 @@
 {
-    "name": "02-veams-cli-components",
+    "name": "veams-workshop-2017",
     "description": "Custom project description",
     "version": "0.0.1",
     "engines": {
         "node": ">=6.0.0"
     },
     "scripts": {
-        "build": "cross-env NODE_ENV=production BABEL_ENV=client grunt build",
         "dev:start": "BABEL_ENV=client grunt serve",
-        "dev:server": "cross-env BABEL_ENV=server node_modules/.bin/nodemon server/index.js --config ./configs/tasks/nodemon.config.json",
+        "dev:server": "cross-env BABEL_ENV=server node_modules/.bin/nodemon src/server/index.js --config ./configs/tasks/nodemon.config.json",
         "start": "cross-env NODE_ENV=local npm-run-all --parallel dev:*",
-        "test": "grunt test"
+        "build": "cross-env NODE_ENV=production BABEL_ENV=client grunt build",
+        "sprite:generate": "node configs/tasks/icons/sprite.js",
+        "images:generate": "node configs/tasks/images/images-resizer.js",
+        "faker": "node configs/tasks/faker/faker.js"
     },
     "dependencies": {
         "handlebars": "^4.0.10",
@@ -18,14 +20,11 @@
         "lazysizes": "^3.0.0",
         "picturefill": "^3.0.2",
         "veams": "^5.0.1",
-        "veams-component-figure": "^5.0.2",
-        "veams-component-picture": "^5.0.1",
-        "veams-component-video": "^5.0.1",
         "veams-plugin-dom": "^1.0.0",
         "veams-plugin-logger": "^1.0.0",
         "veams-plugin-media-query-handler": "^1.0.0",
         "veams-plugin-mixins": "^1.0.0",
-        "veams-plugin-modules": "^1.0.0",
+        "veams-plugin-modules": "^1.0.3",
         "veams-plugin-store": "^0.0.1",
         "veams-plugin-templater": "^1.0.0",
         "veams-plugin-vent": "^1.0.0"
@@ -53,8 +52,10 @@
         "chalk": "^2.0.1",
         "cross-env": "^5.0.5",
         "deep-extend": "^0.5.0",
+        "dr-svg-sprites": "^1.0.0",
         "express": "^4.15.3",
-        "glob": "^7.1.2",
+        "faker": "^4.1.0",
+        "globby": "^6.1.0",
         "grunt": "^1.0.0",
         "grunt-browserify": "~5.0.0",
         "grunt-chokidar": "~1.0.0",
@@ -64,10 +65,7 @@
         "grunt-contrib-cssmin": "~1.0.1",
         "grunt-contrib-handlebars": "~1.0.0",
         "grunt-contrib-uglify": "~1.0.1",
-        "grunt-dr-svg-sprites": "^1.0.0",
         "grunt-mangony": "~1.0.2",
-        "grunt-newer": "~1.2.0",
-        "grunt-open": "~0.2.3",
         "grunt-postcss": "~0.8.0",
         "grunt-sass": "~2.0.0",
         "grunt-sass-globber": "^2.0.2",
@@ -85,9 +83,10 @@
         "npm-run-all": "^4.1.1",
         "path": "^0.12.7",
         "request": "^2.81.0",
-        "sassdoc": "^2.3.0",
+        "responsive-images-generator": "^0.2.2",
         "sass-globber": "^2.0.2",
         "time-grunt": "~1.4.0",
+        "veams-bp-mock-api-endpoint": "^0.0.1",
         "winston": "^2.3.1"
     },
     "licenses": [

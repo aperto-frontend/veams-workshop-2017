@@ -1,29 +1,36 @@
 {
     "projectType": "static-page-app",
     "blueprints": {
-        "filePrefix": false
+        "api": {
+            "skipImports": true,
+            "prompts": "node_modules/veams-bp-mock-api-endpoint/prompts",
+            "templates": "node_modules/veams-bp-mock-api-endpoint/templates"
+        }
     },
     "config": {
-        "src": "configs/_grunt/*.js"
+        "src": "configs/tasks/_grunt/*.js"
     },
     "importFiles": {
-        "style": "src/app.scss",
-        "script": "src/app.js"
+        "style": "src/app/app.scss",
+        "script": "src/app/app.js"
     },
     "insertpoints": [
-        "src/app.js",
-        "src/core/layouts",
-        "src/pages",
-        "src/features/containers",
-        "src/app.events.js"
+        "src/app/app.js",
+        "src/app/core/layouts",
+        "src/app/pages",
+        "src/app/features",
+        "src/app/app.events.js"
     ],
     "paths": {
-        "config": "configs",
-        "server": "server",
-        "src": "src",
+        "api": "src/server/api",
         "app": "app",
-        "component": "src/shared/components",
-        "utility": "src/shared/utilities"
+        "assets": "src/app/assets",
+        "component": "src/app/shared/components",
+        "config": "configs",
+        "mocks": "src/server/mocks",
+        "server": "src/server",
+        "src": "src/app",
+        "utility": "src/app/shared/utilities"
     },
     "ports": {
         "app": 3000,

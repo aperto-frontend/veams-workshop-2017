@@ -1,55 +1,212 @@
-# 02 veams cli components
+# veams-workshop-2017
 
-Current version="0.0.1"
+The project is build with `veams-cli`. You can add or modify settings in the provided `veams-cli.json`.
 
-## Requirements For Frontend Development
+`Veams-cli` is responsible for the initial setup as well as for the scaffolding process of blueprints.
+Every task and configuration files are exposed in the `configs` folder.
 
-* NodeJS (>= 6.0.0)
-* Grunt
-
-### Libsass
-We use Libsass as standard SCSS compiler.
-
-## Frontend Methodology
-We build 02 veams cli components with the Veams Methodology:
-* http://veams.org/methodology/
-
-## Setup
-
-This project builds on following setup (please read requirements and getting started):
-
+For more information take a look at the Veams documentation.
 - Veams Overview: https://github.com/Sebastian-Fitzner/Veams
 - Veams Website: http://veams.org/
 
-- We use [Grunt](http://gruntjs.com/)
-- We use [Git](#).
-- The folder __node_modules__ won't be comitted into GIT. Use ```.gitignore``` to ignore folders or files.
-- Git-commit-messages in english please.
-- All issues are recorded in [Jira](#).
-- Jira-Issues are commented in german/english.
+------------------
 
-## Browser-Support
+## Folder Structure
 
-- all modern desktop browsers: Firefox, Chrome, IE and Safari/Mac latest version
-- also: IE 11
-- all modern mobile browsers: iOS and Android latest two versions
+------------------
 
-## Responsive-Webdesign-Support
+### Basic Files and Folders
 
-- Desktop
-- Tablet
-- Phone
+The app contains multiple sections which have its own responsibility. In general the structure looks like that:
 
-### Breakpoints
-- $bp-mobile-s: (max 320px);
-- $bp-mobile-m: (max 480px);
-- $bp-mobile-l: (max 640px);
-- $bp-tablet-p: (max 768px);
-- $bp-tablet-l: (max 1024px);
-- $bp-desktop: (min 1025px);
+``` bash
+├── app.js
+├── app.events.js
+├── app.veams.js
+├── app.scss
+├── assets
+│   ├── fonts
+│   ├── icons
+│   ├── img
+│   └── media
+├── core
+│   ├── components
+│   ├── layouts
+│   ├── store
+│   └── styles
+│       ├── base.scss
+│       ├── get-media.scss
+│       ├── modifiers.scss
+│       └── print.scss
+├── features(*)
+├── pages
+└── shared
+    ├── components
+    ├── styles
+        ├── _shared.scss
+        ├── _vars.scss
+        ├── helpers
+        │   ├── _helpers.scss
+        │   └── functions
+        └── icons
+└── utilities
+```
 
-## Team
+### App Files
 
-- TPM/PM:
-- Frontend:
-- Backend:
+``` bash
+├── app.js
+├── app.veams.js
+├── app.events.js
+└── app.scss
+```
+
+These files are the main entry point of our application.
+
+### Assets
+
+As the folder says, it contains all the assets like images, fonts, svg icons and more which we can use project wide.
+
+### Core
+
+``` bash
+├── core
+    ├── components
+    ├── layouts
+    ├── store (*)
+    └── styles
+        ├── base.scss
+        ├── get-media.scss
+        ├── modifiers.scss
+        └── print.scss
+```
+
+The core is responsible for the project specific setup. It contains components and states which define the base of the application.
+
+Core Components are global components which are app specific, means you cannot share these components project wide.
+
+__Examples__
+
+- Header
+- Navigation
+- Footer
+
+#### Layouts
+
+The layout contains the general structure of the application. It is responsible for the general rendering of the application.
+
+#### Styles
+
+The styles folder contains all important global styles like:
+
+- reset
+- base
+- modifiers
+
+------------------
+
+## Tasks
+
+------------------
+
+### Icons (`configs/tasks/icons/`)
+
+Icons have to be saved in your assets folder. The default location for your icons is `assets/icons`.
+
+#### Icons Sprite (`configs/tasks/icons/sprite.js`)
+
+To build a sprite from your icons which will be used as background image in your CSS you only need to execute:
+
+``` bash
+npm run sprite:generate
+```
+
+This creates a new `sprite.scss` in your `shared/styles/icons` folder. The new file gets imported automatically.
+Next to that it creates the sprite files called `sprite.svg` in `assets/img/`.
+
+------------------
+
+### Images (`configs/tasks/images/`)
+
+Images have to be saved in your assets folder. The default location for your icons is `assets/img`.
+
+#### Image Generation (`configs/tasks/images/images-resizer.js`)
+
+To generate images you can use the following commands which are defined in `package.json`:
+
+``` bash
+`npm run images:generate ${files}`
+```
+
+__Examples__
+
+1. `npm run images:generate "**/*.jpg"` => Simple globbing support.
+1. `npm run images:generate "test/*.jpg"` => Globbing in a specific folder.
+1. `npm run images:generate "test.jpg"` => Generate only one image.
+1. `npm run images:generate "test.jpg" preset=default` => Generate one image with another preset.
+
+**Customization**
+
+__Paths__
+
+All commands have a reference to the images in your `assets/img/` folder. The `assets` folder can be change in `veams-cli.json`.
+
+__Presets__
+
+Custom presets can easily be added by you. Take a look at the `preset` folder in the configuration path.
+
+__Options__
+
+You can change the `suffix` definition in the provided `config.js` file.
+Furthermore you can easily add options for your presets, just take a look at https://github.com/felixrieseberg/responsive-images-generator#configuration.
+
+------------------
+
+### Server
+
+The provided express server instance exposes an API which you can use to work with your file system.
+
+The API Server is a mock server which can be used in a really simple way.
+
+Just add your JSON mocks to `src/server/mocks/${endpoint}` and
+make sure that you already have an endpoint available in `src/server/api/${endpoint}`.
+
+After that you can reach that endpoint at the following location:
+
+- `/api/${endpoint}` => You will get all mocks in an array.
+- `/api/${endpoint}/${filename}` => You will get a specific mock by using the filename as Id.
+
+#### Add endpoint to API ([`veams-bp-mock-api-endpoint`](https://github.com/Veams/veams-bp-mock-api-endpoint))
+
+You can easily add a new endpoint by using `veams-cli`.
+
+Just execute the following command `veams add api [name]`.
+
+This will create a new folder in `server/routes/`.
+The only thing you have to do is referencing the file in `server/routes/index.js` by adding the snippets from `USAGE.md`.
+
+
+#### Fake Data Generation (`configs/tasks/faker/faker.js`)
+
+You can generate fake data files by using the provided task.
+Therefore you need to create a preset file and save it in the presets folder of the task.
+
+The output is saved in the `mocks` folder of your server.
+You can configure the destination path in `veams-cli.json`.
+
+To generate fake data execute the following commands:
+
+``` bash
+npm run faker ${presetName} ${length}
+```
+
+__Examples__
+
+1. `npm run faker example` => Generate 10 fake data files by using example preset.
+1. `npm run faker example 100` => Generate 100 fake data files by using example preset.
+
+__Presets__
+
+Custom presets are easy to create.
+Just take a look add the preset files in the task folder and use the [API from `faker.js`](http://marak.github.io/faker.js/faker.html).
+

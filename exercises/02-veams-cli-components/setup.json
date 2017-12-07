@@ -1,14 +1,14 @@
 {
   "generator-veams": {
-    "projectName": "02 veams cli components",
+    "projectName": "veams-workshop-2017",
     "projectType": "static-page-app",
     "taskRunner": "grunt",
     "templateEngine": "ssr-mangony-hbs",
+    "server": [
+      "serverFakeData"
+    ],
     "gruntModules": [
-      "grunt-dr-svg-sprites",
       "grunt-autoprefixer",
-      "grunt-browserify",
-      "grunt-contrib-uglify",
       "grunt-contrib-handlebars"
     ],
     "features": [],
@@ -24,7 +24,12 @@
     "testAndQALibs": [],
     "veamsPackages": true,
     "docs": [],
-    "icons": "sprites",
+    "icons": [
+      "sprite"
+    ],
+    "images": [
+      "imgResponsive"
+    ],
     "cssPostProcessors": [
       "autoprefixer"
     ]
